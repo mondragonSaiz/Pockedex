@@ -45,7 +45,8 @@ function manageErrors(response) {
 
 let renderError = function () {
   console.log("ERRRORRRR");
-  pokeIMG.src = "assets/images/errorPic.png";
+  pokeIMG.src =
+    "https://cdn.dribbble.com/users/4040675/screenshots/10545158/media/85a3329e4202059593616d3b42f16e8d.png?compress=1&resize=400x300";
 };
 
 let renderPokemon = function (data) {
