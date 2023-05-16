@@ -174,4 +174,7 @@ nav {
     margin-right: auto;
     margin-left: auto;
   }
+  button {
+    margin-top: 8px;
+  }
 }
