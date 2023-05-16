@@ -153,12 +153,20 @@ nav {
 .fairyType {
   background-color: rgb(230, 174, 220);
 }
+
+.pokeCard {
+  max-width: 540px;
+}
 @media screen and (max-width: 768px) {
+  .pokeCard {
+    max-width: 300px;
+  }
   .card {
     text-align: center;
   }
   .poke-form {
-    width: 273px;
+    margin-right: 25px;
+    width: 300px;
   }
 
   .poke-form > input,
