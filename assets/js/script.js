@@ -14,7 +14,7 @@ pockeForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("HOLAAA");
   console.log("POKE NAME : ", pokemonInput.value);
-  let pokeValue = pokemonInput.value.trim();
+  let pokeValue = pokemonInput.value.trim().toLowerCase();
   getPokemon(pokeValue);
 });
 
