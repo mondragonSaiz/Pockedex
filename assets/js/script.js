@@ -45,7 +45,7 @@ function manageErrors(response) {
 
 let renderError = function () {
   console.log("ERRRORRRR");
-  pokeIMG.src = "../assets/images/errorPic.png";
+  pokeIMG.src = "assets/images/errorPic.png";
 };
 
 let renderPokemon = function (data) {
