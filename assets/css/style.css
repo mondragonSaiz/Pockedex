@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(34, 33, 33);
+}
+
+nav {
+  padding: 10px;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.main-container {
+  margin-top: 5%;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.row {
+  justify-content: center;
+}
+.card {
+  padding: 15px;
+}
+.card-title {
+  text-align: center;
+  background-color: rgb(69, 156, 69);
+  border: 1px solid rgb(133, 130, 130);
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.poke-img {
+  min-width: 180px;
+  min-height: 180px;
+  background-size: contain;
+}
+
+.poke-info {
+  padding-left: 15px;
+}
+
+.poke-details {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pokemon-type {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.type-colorIndicator {
+  width: 10px;
+  height: 15px;
+  border: 1px solid rgba(8, 8, 8, 0.226);
+  background-color: cyan;
+}
+
+.first-type,
+.second-type {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: fit-content;
+}
+.poke-form {
+  width: fit-content;
+}
+
+.pokeMap {
+  margin-left: 25%;
+  margin-right: 50%;
+}
+
+.pokeMap > img {
+  width: 600px;
+  height: 500px;
+}
+
+.electricType {
+  background-color: rgb(212, 235, 4);
+}
+
+.fireType {
+  background-color: rgb(255, 145, 0);
+}
+
+.flyingType {
+  background-color: cornflowerblue;
+}
+
+.waterType {
+  background-color: rgb(58, 141, 236);
+}
+
+.fightingType {
+  background-color: rgb(124, 41, 15);
+}
+
+.grassType {
+  background-color: rgb(101, 170, 10);
+}
+
+.normalType {
+  background-color: rgb(126, 126, 129);
+}
+
+.poisonType {
+  background-color: rgb(117, 17, 126);
+}
+
+.groundType {
+  background-color: rgb(191, 194, 50);
+}
+
+.rockType {
+  background-color: rgb(144, 124, 98);
+}
+
+.bugType {
+  background-color: rgb(100, 237, 130);
+}
+
+.ghostType {
+  background-color: rgb(59, 7, 107);
+}
+
+.pyschicType {
+  background-color: rgb(237, 100, 237);
+}
+
+.iceType {
+  background-color: rgb(0, 174, 255);
+}
+
+.dragonType {
+  background-color: rgb(112, 79, 155);
+}
+
+.darkType {
+  background-color: rgb(44, 43, 41);
+}
+
+.fairyType {
+  background-color: rgb(230, 174, 220);
+}
+@media screen and (max-width: 768px) {
+  .card {
+    text-align: center;
+  }
+  .poke-form {
+    width: 273px;
+  }
+
+  .poke-form > input,
+  img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
