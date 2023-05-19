@@ -7,9 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -74,7 +75,7 @@
     <main class="container-fluid main-container">
       <div class="row">
         <!-- Pokemon Card  -->
-        <div class="card bg-danger mb-3 col-md-6 pokeCard">
+        <div class="card mb-3 col-md-6 poke-card">
           <div class="row g-0">
             <div class="col-md-4">
               <img
@@ -84,7 +85,7 @@
               />
             </div>
             <div class="col-md-8 poke-info">
-              <div class="card-body">
+              <div class="card-body poke-info-body">
                 <h5 class="card-title poke-title">-------</h5>
 
                 <div class="poke-details">
@@ -99,13 +100,26 @@
                   </div>
                   <div class="second-type"></div>
                 </div>
+                <div class="habilidades"></div>
+                <!-- <div
+                  class="pokemon-abilities"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#abilities-container"
+                  aria-expanded="false"
+                  aria-controls="abilities-container"
+                >
+                  <p class="card-text">
+                    <small class="smallText">See abilities</small>
+                  </p>
+                  <div class="collapse" id="abilities-container"></div>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
         <!-- End of Pokemon Card  -->
-        <form class="poke-form">
-          <div class="card mb-3 col-md-6 bg-danger poke-form">
+        <form class="form">
+          <div class="card mb-3 col-md-6 poke-form">
             <label for="exampleDataList" class="form-label">Pokemon Name</label>
             <input
               class="form-control poke-input"

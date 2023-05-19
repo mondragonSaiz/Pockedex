@@ -19,7 +19,7 @@ nav {
 
 .main-container {
   margin-top: 5%;
-  font-family: "Chakra Petch", sans-serif;
+  font-family: "VT323", monospace;
 }
 
 .row {
@@ -27,6 +27,7 @@ nav {
 }
 .card {
   padding: 15px;
+  background-color: #ce0f30;
 }
 .card-title {
   text-align: center;
@@ -56,6 +57,30 @@ nav {
   justify-content: space-evenly;
 }
 
+.pokemon-abilities {
+  text-align: center;
+  visibility: hidden;
+}
+
+.liEl {
+  list-style: square;
+  margin-right: 50px;
+}
+
+.pokemon-abilities-visible {
+  text-align: center;
+  visibility: visible;
+}
+
+.smallText {
+  color: antiquewhite;
+}
+
+.smallText:hover {
+  text-decoration: underline;
+  color: rgba(87, 92, 90, 0.342);
+}
+
 .type-colorIndicator {
   width: 10px;
   height: 15px;
@@ -70,6 +95,9 @@ nav {
 }
 
 .form-control {
+  width: fit-content;
+}
+.form {
   width: fit-content;
 }
 .poke-form {
@@ -154,19 +182,22 @@ nav {
   background-color: rgb(230, 174, 220);
 }
 
-.pokeCard {
+.poke-card {
   max-width: 540px;
+  min-height: 240px;
+  background-color: #ce0f30;
 }
 @media screen and (max-width: 768px) {
-  .pokeCard {
+  .poke-card {
     max-width: 300px;
-  }
-  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
   .poke-form {
-    margin-right: 25px;
     width: 300px;
+    text-align: center;
   }
 
   .poke-form > input,

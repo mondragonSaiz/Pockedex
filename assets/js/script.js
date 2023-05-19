@@ -2,18 +2,19 @@ let pokeIMG = document.querySelector(".poke-img");
 let pokeTitle = document.querySelector(".poke-title");
 let pokeHeight = document.querySelector(".poke-height");
 let pokeTypeSection = document.querySelector(".pokemon-type");
-
+let pokeIndoBody = document.querySelector(".habilidades");
 let firstType = document.querySelector(".first-type");
 let secondType = document.querySelector(".second-type");
 
 let pokeWeight = document.querySelector(".poke-weight");
 let pokemonInput = document.querySelector(".poke-input");
-let pockeForm = document.querySelector(".poke-form");
+let pockeForm = document.querySelector(".form");
 
 pockeForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("HOLAAA");
   console.log("POKE NAME : ", pokemonInput.value);
+
   let pokeValue = pokemonInput.value.trim().toLowerCase();
   getPokemon(pokeValue);
 });
@@ -30,6 +31,8 @@ var getPokemon = function (idOrName) {
     throw new Error("THIS A ERROR", e);
   }
 };
+let pokeAbilities = document.querySelector(".pokemon-abilities");
+let abilitiesContainer = document.getElementById("abilities-container");
 
 function manageErrors(response) {
   if (!response.ok) {
@@ -43,6 +46,8 @@ function manageErrors(response) {
   return response;
 }
 
+// let seeDetails = false;
+
 let renderError = function () {
   console.log("ERRRORRRR");
   pokeIMG.src =
@@ -50,6 +55,35 @@ let renderError = function () {
 };
 
 let renderPokemon = function (data) {
+  // if (seeDetails) {
+  //   getPokemonAbilities(data);
+  // }
+
+  pokeIndoBody.innerHTML = "";
+
+  var pokemonAbilities = document.createElement("div");
+  pokemonAbilities.classList.add(".pokemon-abilities");
+  pokemonAbilities.setAttribute("data-bs-toggle", "collapse");
+  pokemonAbilities.setAttribute("data-bs-target", "#abilities-container");
+  pokemonAbilities.setAttribute("aria-expanded", "false");
+  pokemonAbilities.setAttribute("aria-controls", "abilities-container");
+
+  var seeAbilitiesText = document.createElement("p");
+  seeAbilitiesText.classList.add("card-text");
+  var smallAbilitiesText = document.createElement("small");
+  smallAbilitiesText.classList.add("smallText");
+  smallAbilitiesText.textContent = "See abilities";
+  seeAbilitiesText.append(smallAbilitiesText);
+
+  var abilities = document.createElement("div");
+  abilities.classList.add("collapse");
+  abilities.setAttribute("id", "abilities-container");
+
+  pokemonAbilities.append(seeAbilitiesText);
+  pokemonAbilities.append(abilities);
+
+  pokeIndoBody.append(pokemonAbilities);
+
   console.log("DATA", data);
   console.log("PIKA IMAGE URL", data.sprites.front_default);
   let imgURL = data.sprites.front_default;
@@ -105,6 +139,35 @@ let renderPokemon = function (data) {
       firstType.append(firstTypeTextIndicator);
     }
   }
+  let getPokemonAbilities = function () {
+    console.log("Pokemon abilities!!!");
+    // console.log("Pokemon DATA: ", data);
+
+    let idOrName = pokemonInput.value.trim().toLowerCase();
+    console.log("Pokemon in discuss : ", idOrName);
+    let pokeURL = `https://pokeapi.co/api/v2/pokemon/${idOrName}/`;
+    fetch(pokeURL)
+      .then((res) => res.json())
+      .then((data) => renderPokemonAbilities(data));
+  };
+
+  pokemonAbilities.addEventListener("click", getPokemonAbilities);
+
+  let renderPokemonAbilities = function (data) {
+    let ulEL = document.createElement("ul");
+    console.log("DATA FOR ABILITIES", data);
+    abilities.innerHTML = "";
+    console.log("ABILITIES", data.abilities);
+    for (let i = 0; i < data.abilities.length; i++) {
+      const abilityName = data.abilities[i].ability.name;
+      console.log(`ABILITIE - ${i} :`, abilityName);
+      let liEL = document.createElement("li");
+      liEL.classList.add("liEl");
+      liEL.textContent = abilityName;
+      ulEL.append(liEL);
+    }
+    abilities.append(ulEL);
+  };
 };
 
 let getTypeColor = function (tipo1) {
