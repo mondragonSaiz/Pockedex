@@ -89,7 +89,7 @@ let renderPokemon = function (data) {
   let imgURL = data.sprites.front_default;
   pokeIMG.setAttribute("src", imgURL);
   pokeTitle.textContent = data.name;
-  pokeHeight.textContent = `Height : ${data.height}cm`;
+  pokeHeight.textContent = `Height : ${data.height}0cm`;
   pokeWeight.textContent = ` Weight : ${data.weight}kg`;
 
   // pokeType1.textContent = `${data.types[0].type.name}`;
